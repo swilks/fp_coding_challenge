@@ -1,5 +1,6 @@
 class RetirementsController < ApplicationController
 	def new
+		@retirement = Retirement.new
 	end
 
 	def create
