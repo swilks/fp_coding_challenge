@@ -1,0 +1,31 @@
+<h2> Calculate Retirement Age </h2>
+<%= form_for :retirement, url: retirements_path do |f| %>
+  <p>
+    <%= f.label :portfolio_type %><br>
+    <%= f.select :portfolio_type, options_for_select(["Cash", "cash"], ["Future Advisor", "future_advisor"]),@retirement.portfolio_type %>
+  </p>
+
+  <p>
+    <%= f.label :current_age %><br>
+    <%= f.text_field :current_age %>
+  </p>
+
+  <p>
+    <%= f.label :current_amount %><br>
+    <%= f.text_field :current_amount %>
+  </p>
+
+  <p>
+    <%= f.label :anual_contributions %><br>
+    <%= f.text_field :anual_contributions %>
+  </p>
+
+  <p>
+    <%= f.label :desired_anual_income %><br>
+    <%= f.text_field :desired_anual_income %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

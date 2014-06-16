@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  portfolio_type: MyString
+  current_age: 1
+  current_amount: 1
+  anual_contributions: 1
+  desired_anual_income: 1
+  retirement_age: 1
+
+two:
+  portfolio_type: MyString
+  current_age: 1
+  current_amount: 1
+  anual_contributions: 1
+  desired_anual_income: 1
+  retirement_age: 1
