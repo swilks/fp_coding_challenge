@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616004411) do
+ActiveRecord::Schema.define(version: 20140616013157) do
 
-  create_table "retirments", force: true do |t|
+  create_table "retirements", force: true do |t|
     t.string   "portfolio_type"
     t.integer  "current_age"
     t.integer  "current_amount"

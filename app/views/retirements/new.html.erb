@@ -1,5 +1,5 @@
 <h2> Calculate Retirement Age </h2>
-<%= form_for :retirement, url: retirements_path do |f| %>
+<%= form_for @retirement, url: retirements_path do |f| %>
   <p>
     <%= f.label :portfolio_type %><br>
     <%= f.select :portfolio_type, options_for_select(["Cash", "cash"], ["Future Advisor", "future_advisor"]),@retirement.portfolio_type %>
