@@ -1,5 +1,15 @@
 <h2> Calculate Retirement Age </h2>
 <%= form_for @retirement, url: retirements_path do |f| %>
+  <% if @retirement.errors.any? %>
+    <div id="error_explanation">
+      <h3> Failed to calculate your retirement age! We ran into some errors: </h3>
+          <ul>
+            <% @retirement.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+    </div>
+  <% end %>
   <p>
     <%= f.label :portfolio_type %><br>
     <%= f.select :portfolio_type, options_for_select([["Cash", "cash"], ["Future Advisor", "future_advisor"]], @retirement.portfolio_type) %>
@@ -27,5 +37,6 @@
  
   <p>
     <%= button_to "Get Your Retirement Age", '/retirements', :method => "post" %>
+    <%= button_to "Back to Index", retirements_path, :method => "get" %>
   </p>
 <% end %>

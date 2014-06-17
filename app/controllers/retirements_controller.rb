@@ -1,5 +1,3 @@
-require 'json'
-
 class RetirementsController < ApplicationController
 	def new
 		@retirement = Retirement.new
