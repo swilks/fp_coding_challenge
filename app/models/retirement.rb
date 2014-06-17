@@ -7,7 +7,7 @@ class Retirement < ActiveRecord::Base
 	validates :desired_anual_income, inclusion: { in: 50000..200000, message: "must be within 50,000 and 200,000" }
 	
 	validates_each :current_amount, :anual_contributions, :desired_anual_income do |record, attr, value| 
-		record.errors.add attr, 'must be a multiple of 10,000' if value == nil || value % 10000 != 0
+	record.errors.add attr, 'must be a multiple of 10,000' if value == nil || value % 10000 != 0
 	end
 
 
