@@ -1,0 +1,24 @@
+<h3> Retirement Plan History </h3>
+
+<table>
+	<tr>
+		<th>Portfolio Type</th>
+		<th>Current Age</th>
+		<th>Current Account Balance</th>
+		<th>Anual Contributions</th>
+		<th>Desired Anual Income</th>
+		<th>Age You Can Retire</th>
+	</tr>
+	<% @retirements.reverse.each do |retirement| %>
+		<tr>
+			<td><%= retirement.portfolio_type %></td>
+			<td><%= retirement.current_age %></td>
+			<td><%= retirement.current_amount%></td>
+			<td><%= retirement.anual_contributions%></td>
+			<td><%= retirement.desired_anual_income %></td>
+			<td><%= retirement.retirement_age %></td>
+		</tr>
+	<% end %>
+</table>
+
+<%= button_to "New Retirment Age Query", new_retirement_path, :method => "get" %>
