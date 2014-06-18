@@ -1,42 +1,39 @@
-<h2> Calculate Retirement Age </h2>
-<%= form_for @retirement, url: retirements_path do |f| %>
-  <% if @retirement.errors.any? %>
-    <div id="error_explanation">
-      <h3> Failed to calculate your retirement age! We ran into some errors: </h3>
-          <ul>
-            <% @retirement.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
+<body>
+  <img id="logo" src="https://p-static.futureadvisor.com/images/logos/FA_Transparent_logo@2X.png" />
+    <div id="new-retirment-wrapper" class="new-retirement-form light-shadow rounded-large wrapper">
+      <h2> Calculate Retirement Age </h2>
+      <%= form_for @retirement, url: retirements_path do |f| %>
+        <% if @retirement.errors.any? %>
+          <div id="error-explanation">
+            <h3 style="color:black; margin-bottom:0px"> Failed to calculate your retirement age! We ran into some errors: </h3>
+                <ul style="margin-top:0px">
+                  <% @retirement.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+          </div>
+        <% end %>
+        <%= f.label :portfolio_type %></br>
+        <%= f.select :portfolio_type, options_for_select([["Cash", "cash"], ["Future Advisor", "future_advisor"]], @retirement.portfolio_type) %>
+
+        </br>
+        <%= f.label :current_age %></br>
+        <%= f.text_field :current_age %>
+
+        </br>
+        <%= f.label :current_amount %></br>
+        <%= f.text_field :current_amount %>
+        </br>
+        <%= f.label :anual_contributions %></br>
+        <%= f.text_field :anual_contributions %>
+        </br>
+        <%= f.label :desired_anual_income %></br>
+        <%= f.text_field :desired_anual_income %>
+        </br>
+
+        <%= button_to "Get Your Retirement Age", '/retirements', :method => "post" %>
+        <%= button_to "Back to Index", retirements_path, :method => "get"%>
+
+      <% end %>
     </div>
-  <% end %>
-  <p>
-    <%= f.label :portfolio_type %><br>
-    <%= f.select :portfolio_type, options_for_select([["Cash", "cash"], ["Future Advisor", "future_advisor"]], @retirement.portfolio_type) %>
-  </p>
-
-  <p>
-    <%= f.label :current_age %><br>
-    <%= f.text_field :current_age %>
-  </p>
-
-  <p>
-    <%= f.label :current_amount %><br>
-    <%= f.text_field :current_amount %>
-  </p>
-
-  <p>
-    <%= f.label :anual_contributions %><br>
-    <%= f.text_field :anual_contributions %>
-  </p>
-
-  <p>
-    <%= f.label :desired_anual_income %><br>
-    <%= f.text_field :desired_anual_income %>
-  </p>
- 
-  <p>
-    <%= button_to "Get Your Retirement Age", '/retirements', :method => "post" %>
-    <%= button_to "Back to Index", retirements_path, :method => "get" %>
-  </p>
-<% end %>
+</body>

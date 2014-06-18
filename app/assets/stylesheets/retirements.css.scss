@@ -1,3 +1,85 @@
 // Place all the styles related to the retirements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+	padding: 0px;
+}
+
+body {
+	padding: 0px;
+	max-width: 1170px;
+	margin: 0px auto;
+}
+
+/*Include the future advisor logo*/
+#logo {
+	width: 250px;
+	height: 66px;
+	margin-bottom: 50px;	
+}
+
+/*General wrapper class */
+.wrapper {
+	margin: 0px auto;
+	max-width: 800px;
+	padding:20px;
+}
+
+/*Wrapper for the new retirement form*/
+#new-retirment-wrapper {
+	max-width: 420px;
+	input, select {
+		margin-bottom: 10px;
+		margin-top: 5px;
+	}
+
+}
+
+#error-explanation {
+	color: red;
+}
+
+.retirement-index {
+	border-collapse:collapse;
+	/*Alternate row colour*/
+	th {
+		padding:5px;
+		margin-right: 0px;
+		background:#305ACB; 
+		color:white;
+	}
+	td {
+		padding: 5px;
+		padding-left: 10px;
+		text-align: center;
+	}
+	tr:nth-child(odd) {
+		background: #EAEBED;
+	}
+	tr:nth-child(even){
+		background: #b8d1f3;
+	}
+}
+
+/*There are some annoying auto-margins I wanted to get rid of*/
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+.button_to {
+	margin-top: 10px;
+}
+
+.light-shadow {
+	-webkit-box-shadow:  1px 1px 5px 1px rgba(0, 0 , 0, .75);       
+	box-shadow:  1px 1px 5px 1px rgba(0, 0 , 0, .75);
+}
+
+.rounded-large {
+	-webkit-border-radius: 16px;    
+    border-radius: 16px;
+}
+
